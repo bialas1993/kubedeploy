@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic
+spec:
+  backend:
+    serviceName: nginx
+    servicePort: 80
+  rules:
+  - host: foo.bar.com
+    http:
+      paths:
+      - backend:
+          serviceName: echoheaders
+          servicePort: 8080
